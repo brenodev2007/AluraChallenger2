@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AluraChallenger2Application {
+public class mainApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AluraChallenger2Application.class, args);
+		SpringApplication.run(mainApp.class, args);
 		System.out.println("🚀 Aplicação Spring Boot conectada ao PostgreSQL!");
 	}
 
