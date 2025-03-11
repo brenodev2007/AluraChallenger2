@@ -15,7 +15,7 @@ public class Receita {
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    @Column(name = "descricao")
+    @Column(name = "descricao", unique = true)
     private String descricao;
 
     @Column(name = "valor")
