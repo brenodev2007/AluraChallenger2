@@ -30,7 +30,7 @@ public class ReceitaController {
     }
 
     @PutMapping("/receita")
-    public Receita atualizarReceita(Receita receita){
+    public Receita atualizarReceita(@RequestBody Receita receita){
         return receitaService.atualizarReceita(receita);
     }
 
