@@ -3,6 +3,7 @@ package Breno_2.AluraChallenger2.Controller;
 import Breno_2.AluraChallenger2.Entity.Despesa;
 import Breno_2.AluraChallenger2.Service.DespesaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,18 +24,19 @@ public class DespesaController {
         return despesaService.getDespesaById(id);
     }
 
-    @PostMapping("/despesa")
+    @PostMapping("/despesas")
     public Despesa criarDespesa(Despesa despesa){
         return despesaService.criarDespesa(despesa);
     }
 
-    @PutMapping("/despesa")
+    @PutMapping("/despesas")
     public Despesa atualizarDespesa( @RequestBody Despesa despesa){
         return despesaService.atualizarDespesa(despesa);
     }
 
-    @DeleteMapping("/despesa/{id}")
-    public void deletarDespesa(Long id){
+    @DeleteMapping("/despesas/{id}")
+    public ResponseEntity<String> deletarDespesa(@PathVariable Long id) {
         despesaService.deletarDespesa(id);
+        return ResponseEntity.ok("Despesa deletada com sucesso!");
     }
 }

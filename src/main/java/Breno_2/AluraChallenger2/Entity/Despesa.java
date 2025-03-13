@@ -19,7 +19,7 @@ public class Despesa {
     private String descricao;
 
     @Column(name = "valor")
-    private String valor;
+    private Double valor;
 
     @Column(name = "data")
     private Date data;
