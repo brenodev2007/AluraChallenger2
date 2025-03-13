@@ -23,4 +23,8 @@ public class Despesa {
 
     @Column(name = "data")
     private Date data;
+
+    @JoinColumn
+    @ManyToOne
+    private Categoria categoria;
 }
