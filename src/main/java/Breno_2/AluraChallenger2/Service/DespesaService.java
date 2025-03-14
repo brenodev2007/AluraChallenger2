@@ -1,5 +1,6 @@
 package Breno_2.AluraChallenger2.Service;
 
+import Breno_2.AluraChallenger2.Entity.Categoria;
 import Breno_2.AluraChallenger2.Entity.Despesa;
 import Breno_2.AluraChallenger2.Repository.DespesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,9 @@ public class DespesaService {
 
     public void deletarDespesa(Long id){
         despesaRepository.deleteById(id);
+    }
+
+    public List<Despesa> getDespesaByCategoria(Categoria categoria) {
+        return despesaRepository.findByCategoria(categoria);
     }
 }

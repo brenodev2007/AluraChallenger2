@@ -24,6 +24,12 @@ public class DespesaController {
         return despesaService.getDespesaById(id);
     }
 
+    @GetMapping("/despesas/{categoria}")
+    public List<Despesa> getDespesaByCategoria(String categoria){
+        return despesaService.getDespesaByCategoria(categoria);
+    }
+
+
     @PostMapping("/despesas")
     public Despesa criarDespesa(Despesa despesa){
         return despesaService.criarDespesa(despesa);
