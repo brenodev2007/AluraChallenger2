@@ -27,6 +27,10 @@ public class ReceitaService {
         return receitaRepository.findById(id).get();
     }
 
+    public List<Receita> getReceitaByAnoAndMes(int ano, int mes){
+        return receitaRepository.findByAnoAndMes(ano, mes);
+    }
+
     public Receita criarReceita(Receita receita){
         return receitaRepository.save(receita);
     }

@@ -29,6 +29,11 @@ public class ReceitaController {
         return receitaService.getReceitaById(id);
     }
 
+    @GetMapping("/receitas/{ano}/{mes}")
+    public List<Receita> getReceitaByAnoAndMes(@PathVariable int ano, @PathVariable int mes){
+        return receitaService.getReceitaByAnoAndMes(ano, mes);
+    }
+
     @PostMapping("/receita")
     public Receita criarReceita(Receita receita){
         return receitaService.criarReceita(receita);
