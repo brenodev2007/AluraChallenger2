@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface ReceitaRepository extends JpaRepository <Receita, Long> {
-    public Receita findbyDescricao(String descricao);
+    public Receita findByDescricao(String descricao);
     @Query("SELECT r FROM Receita r WHERE YEAR(r.data) = :ano AND MONTH(r.data) = :mes")
     List<Receita> findByAnoAndMes(@Param("ano") int ano, @Param("mes") int mes);
 }

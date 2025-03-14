@@ -20,7 +20,7 @@ public class ReceitaService {
     }
 
     public Receita getRecebitasbyDescricao(String descricao){
-        return receitaRepository.findbyDescricao(descricao);
+        return receitaRepository.findByDescricao(descricao);
     }
 
     public Receita getReceitaById(Long id){
