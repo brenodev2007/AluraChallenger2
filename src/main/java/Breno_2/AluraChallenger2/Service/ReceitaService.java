@@ -19,6 +19,10 @@ public class ReceitaService {
         return receitaRepository.findAll();
     }
 
+    public Receita getRecebitasbyDescricao(String descricao){
+        return receitaRepository.findbyDescricao(descricao);
+    }
+
     public Receita getReceitaById(Long id){
         return receitaRepository.findById(id).get();
     }

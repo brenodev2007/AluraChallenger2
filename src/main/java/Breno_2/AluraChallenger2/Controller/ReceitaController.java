@@ -19,6 +19,11 @@ public class ReceitaController {
         return receitaService.getAllReceitas();
     }
 
+    @GetMapping("/receitas/{descricao}")
+    public Receita getReceitasbyDescricao(@RequestBody String descricao){
+        return receitaService.getRecebitasbyDescricao(descricao);
+    }
+
     @GetMapping("/receita/{id}")
     public Receita getReceitaById(Long id){
         return receitaService.getReceitaById(id);
