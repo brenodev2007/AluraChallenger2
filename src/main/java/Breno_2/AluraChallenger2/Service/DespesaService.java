@@ -23,6 +23,14 @@ public class DespesaService {
         return despesaRepository.findById(id).get();
     }
 
+    public List<Despesa> getDespesaByCategoria(Categoria categoria){
+        return (List<Despesa>) despesaRepository.findByCategoria(categoria);
+    }
+
+    public Despesa getDespesaByDescricao(String descricao){
+        return despesaRepository.findByDescricao(descricao);
+    }
+
     public Despesa criarDespesa(Despesa despesa){
         return despesaRepository.save(despesa);
     }
@@ -35,7 +43,5 @@ public class DespesaService {
         despesaRepository.deleteById(id);
     }
 
-    public List<Despesa> getDespesaByCategoria(Categoria categoria) {
-        return despesaRepository.findByCategoria(categoria);
-    }
+
 }

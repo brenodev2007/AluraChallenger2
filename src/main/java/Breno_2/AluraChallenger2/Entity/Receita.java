@@ -21,6 +21,7 @@ public class Receita {
     @Column(name = "valor")
     private String valor;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "data")
     private Date data;
 }

@@ -21,6 +21,7 @@ public class Despesa {
     @Column(name = "valor")
     private Double valor;
 
+    @Temporal(TemporalType.DATE)
     @Column(name = "data")
     private Date data;
 
