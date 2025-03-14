@@ -35,6 +35,11 @@ public class DespesaController {
         return despesaService.getDespesaByDescricao(descricao);
     }
 
+    @GetMapping("/despesas/{ano}/{mes}")
+    public List<Despesa> getDespesaByAnoAndMes(@PathVariable int ano, @PathVariable int mes){
+        return despesaService.getDespesaByAnoAndMes(ano, mes);
+    }
+
     @PostMapping("/despesas")
     public Despesa criarDespesa(Despesa despesa){
         return despesaService.criarDespesa(despesa);

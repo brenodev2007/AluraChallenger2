@@ -34,6 +34,8 @@ public class ReceitaController {
         return receitaService.getReceitaByAnoAndMes(ano, mes);
     }
 
+
+
     @PostMapping("/receita")
     public Receita criarReceita(Receita receita){
         return receitaService.criarReceita(receita);

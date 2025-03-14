@@ -2,6 +2,7 @@ package Breno_2.AluraChallenger2.Service;
 
 import Breno_2.AluraChallenger2.Entity.Categoria;
 import Breno_2.AluraChallenger2.Entity.Despesa;
+import Breno_2.AluraChallenger2.Entity.Receita;
 import Breno_2.AluraChallenger2.Repository.DespesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,10 @@ public class DespesaService {
 
     public Despesa getDespesaByDescricao(String descricao){
         return despesaRepository.findByDescricao(descricao);
+    }
+
+   public List<Despesa> getDespesaByAnoAndMes(int ano, int mes){
+        return despesaRepository.findByAnoAndMes(ano, mes);
     }
 
     public Despesa criarDespesa(Despesa despesa){
