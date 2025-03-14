@@ -1,5 +1,6 @@
 package Breno_2.AluraChallenger2.Controller;
 
+import Breno_2.AluraChallenger2.Entity.Categoria;
 import Breno_2.AluraChallenger2.Entity.Despesa;
 import Breno_2.AluraChallenger2.Service.DespesaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,9 @@ public class DespesaController {
     }
 
     @GetMapping("/despesas/{categoria}")
-    public List<Despesa> getDespesaByCategoria(String categoria){
+    public List<Despesa> getDespesaByCategoria(Categoria categoria){
         return despesaService.getDespesaByCategoria(categoria);
     }
-
 
     @PostMapping("/despesas")
     public Despesa criarDespesa(Despesa despesa){
