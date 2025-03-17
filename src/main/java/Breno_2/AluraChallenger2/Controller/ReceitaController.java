@@ -4,6 +4,7 @@ package Breno_2.AluraChallenger2.Controller;
 import Breno_2.AluraChallenger2.Entity.Receita;
 import Breno_2.AluraChallenger2.Service.ReceitaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class ReceitaController {
     private ReceitaService receitaService;
 
     @GetMapping("/receitas")
-    public List<Receita> getAllReceitas(){
-        return receitaService.getAllReceitas();
+    public Page<Receita> getAllReceitas(@RequestParam int page){
+        return receitaService.getAllReceitas(page);
     }
 
     @GetMapping("/receitas/{descricao}")
