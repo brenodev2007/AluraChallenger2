@@ -4,6 +4,7 @@ import Breno_2.AluraChallenger2.Entity.Categoria;
 import Breno_2.AluraChallenger2.Entity.Despesa;
 import Breno_2.AluraChallenger2.Service.DespesaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,8 +17,8 @@ public class DespesaController {
     private DespesaService despesaService;
 
     @GetMapping("/despesas")
-    public List<Despesa> getAllDespesas(){
-        return despesaService.getAllDespesas();
+    Page<Despesa> getAllDespesas(@RequestParam int page){
+        return despesaService.getAllDespesas(page);
     }
 
     @GetMapping("/despesa/{id}")

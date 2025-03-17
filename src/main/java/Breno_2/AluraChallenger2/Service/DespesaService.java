@@ -5,6 +5,9 @@ import Breno_2.AluraChallenger2.Entity.Despesa;
 import Breno_2.AluraChallenger2.Entity.Receita;
 import Breno_2.AluraChallenger2.Repository.DespesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,9 +18,9 @@ public class DespesaService {
     @Autowired
     private DespesaRepository despesaRepository;
 
-    public List<Despesa> getAllDespesas(){
-
-        return despesaRepository.findAll();
+    public Page<Despesa> getAllDespesas(int page){
+        Pageable pageable = PageRequest.of(page, 5);
+        return despesaRepository.findAll(pageable);
     }
 
     public Despesa getDespesaById(Long id){
